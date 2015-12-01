@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+  	<meta charset="utf-8">
+  	<meta name="description" content="simon says game">
+  	<meta name="keywords" content="simon says, game, simon, says">
+
+		<title>Simon says</title>
+
+		<!-- external CSS link -->
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/style.css">
+
+	</head>
+	<body>
+		<div id="container">
+
+			<h2 class="best-score">SCORE: <span class="best-score">0<span></h2>
+			<h2 class="round">ROUND: <span id="round" class="round">0<span></h2>
+
+			<div id="instructions">
+				<h2 class="instructions">Lets play Simon Says!</h2><br/> 
+				<h3 class="instructions">Instructions:</h3> <br/>
+				<p class="instructions">See if you can follow the pattern of the colors by clicking them when hightlighted! Easy :)</p><br/>
+				<p class="instructions">Share your best score on facebook and challenge your friends!</p><br/>
+			</div>
+
+			<div id="game-container">
+				<div id="red-box" class="pattern-box" data-box="r"></div>
+				<div id="blue-box" class="pattern-box" data-box="b"></div>
+				<div id="button-area">
+					<a id="play-button" href="#">PLAY</a>
+				</div>
+				<div id="yellow-box" class="pattern-box" data-box="y"></div>
+				<div id="green-box" class="pattern-box" data-box="g"></div>
+			</div>
+
+		</div><!-- #container -->
+
+		<div id="mode">
+			<h2>MODE: </h2>
+			<input id="easy" name="mode" type="radio" class="radio" > EASY
+			<input id="hard" name="mode" type="radio" class="radio"> HARD
+			<h2 id="lose-msg" class="best-score">You Lose. Nice try!</h2>
+		</div>
+
+
+		<script src="js/jquery-2.1.4.js"></script>
+    <script src="js/index.js"></script>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

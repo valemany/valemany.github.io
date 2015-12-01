@@ -1,0 +1,187 @@
+/*
+Project Name: Simon Says
+Client: General Assembly 
+Author: Victor Alemany
+*/
+
+
+/******************************************
+/* SETUP
+/*******************************************/
+
+/* Box Model Hack */
+* {
+  -moz-box-sizing: border-box; /* Firexfox */
+  -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+  box-sizing: border-box; /* IE */
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+  margin-top: 3%;
+  color: #000;
+  font-size: 12px;
+  line-height: 1.4;
+  font-family: Helvetica, Arial, sans-serif;
+  background: url(../images/website-background.jpg) center;
+  background-size: cover;
+  min-height: 1200px;
+  /*overflow: hidden;*/
+}
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+.best-score {
+  font-size: 18px;
+  margin-left: 50px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  color: white;
+  font-weight: bolder;
+  display: inline;
+}
+
+.round {
+  margin-left: 45%;
+  display: inline;
+  font-size: 18px;
+  color: white;
+  font-weight: bolder;
+}
+
+#container > h2 > span {
+  margin-left: 5px;
+}
+
+#instructions {
+  float: right;
+  position: relative;
+  right: 13%;
+  top: 5em;
+  width: 300px;
+  background: url(../images/instruction_background.jpg) top no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  box-shadow: inset 0 0 5px rgba(0,0,0,.75);
+  text-align: left;
+  border-radius: 10px;
+      border: 10px solid black;
+    font-family: fantasy;
+
+
+}
+
+.instructions {
+  margin: 10px;
+  font-size: 15px;
+  margin-left: 60px; 
+}
+
+#instructions > h2 {
+  font-size: 19px;
+}
+
+#instructions > h3 {
+  font-size: 18px;
+  text-decoration: underline;
+  font-weight: bolder;
+}
+
+#game-container {
+  margin-left: 165px;
+    margin-top: 10px;
+    height: 350px;
+
+}
+
+.pattern-box {
+    float: left;
+    height: 60%;
+    width: 23%;
+    border: 33px solid #000;
+    margin-top: 14px;
+}
+
+#button-area {
+   width: 13%;
+    position: relative;
+    height: 35%;
+    border: 3px solid white;
+    margin-left: 17.1%;
+    border-radius: 117px;
+    z-index: 999;
+    margin-top: 3px;
+    top: 10.5rem;
+    background: black;
+    margin-bottom: 3px;
+    text-align: center;
+}
+
+#red-box {
+    border-radius: 132px 0 0;
+    background: #CD5555;
+}
+
+#yellow-box {
+    clear: left;
+  border-radius: 0 0px 0 132px;
+  margin-bottom: 33px;
+  background: #ffffc7;
+}
+
+#blue-box {
+ background: #5CACEE;
+    margin-left: 14px;
+    border-radius: 0 132px 0 0px;
+}
+
+#green-box {
+      margin-left: 16px;
+    border-radius: 0px 0 132px 0;
+    background: #8CDD81;
+}
+
+#play-button {
+  color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    position: relative;
+    bottom: 7.3em;
+    padding: 1%;
+
+}
+
+#mode {
+  clear: both;
+  color: white;
+  font-size: 18px;
+  margin-left: 50px;
+  margin-bottom: 25px;
+  font-weight: bolder;
+}
+
+.highlight { 
+  border-color: white;
+}
+
+.active {
+  opacity: 1 !important;
+}
+
+.hoverable:hover {
+  cursor: pointer;
+}
+
+#lose-msg {
+  color: red;
+  margin-left: 40%;
+  font-size: 24px;
+}
+
