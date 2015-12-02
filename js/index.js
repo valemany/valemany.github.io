@@ -41,14 +41,14 @@ $(function(){
     $("#lose-msg").hide();
     $("input[type='radio']:checked").each(function() {
       mode = $(this).attr("id")
-      mode === 'easy' ? gameData.speed = 1000 : gameData.speed = 300;
+      mode === 'easy' ? gameData.speed = 1000 : gameData.speed = 500;
     });
   }
 
   function newRound() {
     console.log("NEW ROUND");
     $('span.round').text(++gameData.round);
-    gameData.sequence.push("b"); //options[Math.floor(Math.random() * options.length)]
+    gameData.sequence.push(options[Math.floor(Math.random() * options.length)]); 
     gameData.copy = gameData.sequence.slice(0);
     console.log(gameData.copy);
     console.log(gameData.sequence);
@@ -79,9 +79,9 @@ $(function(){
     disableBoard(); 
     var i = 0;
     var interval = setInterval(function() {
+
       console.log(gameData.sequence)
       highlight(gameData.sequence[i]);
-
       i++;
       if (i >= gameData.sequence.length) {
         clearInterval(interval);
@@ -92,28 +92,26 @@ $(function(){
 
   function highlight(box) {
     console.log("HIGHLIGHTING");
-    console.log(box);
     if (box === "b") {
-      $("#blue-box").css("backgroundColor", "blue");
-      setTimeout(function() {
-        $("#blue-box").css("backgroundColor", "#5CACEE");
-      }, gameData.speed);
+      changeColor($("#blue-box"), "highlighted-blue")
     } else if (box === "r") {
-        $("#red-box").css("backgroundColor", "red");
-        setTimeout(function() {
-          $("#red-box").css("backgroundColor", "#CD5555");
-      }, gameData.speed);
+      changeColor($("#red-box"), "highlighted-red")
     } else if (box === "g") {
-        $("#green-box").css("backgroundColor", "green");
-        setTimeout(function() {
-          $("#green-box").css("backgroundColor", "#8CDD81");
-      }, gameData.speed);
+        changeColor($("#green-box"), "highlighted-green")
     } else if (box === "y") {
-        $("#yellow-box").css("backgroundColor", "yellow");
-        setTimeout(function() {
-          $("#yellow-box").css("backgroundColor", "#ffffc7");
-      }, gameData.speed);
+        changeColor($("#yellow-box"), "highlighted-yellow")
     }
+  }
+
+  function changeColor(element, css) {
+    setTimeout(function() {
+      $(element).addClass(css);
+      }, 200);
+    
+    setTimeout(function() {
+      $(element).removeClass(css);
+      }, gameData.speed);
+
   }
 
   function registerClick() {
@@ -141,12 +139,8 @@ $(function(){
 
    function activateBoard() {
     $('#game-container').on('click', '[data-box]', function() {
-        registerClick();
-      }).on('mousedown', '[data-box]', function(){
-        $(this).addClass('active');
-      }).on('mouseup', '[data-box]', function(){
-        $(this).removeClass('active');
-      });
+      registerClick();
+    });
 
     $('[data-box]').addClass('hoverable');
   }
