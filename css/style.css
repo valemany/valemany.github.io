@@ -105,7 +105,6 @@ body {
     height: 60%;
     width: 23%;
     border: 33px solid #000;
-    margin-top: 14px;
 }
 
 #button-area {
@@ -113,11 +112,10 @@ body {
     position: relative;
     height: 35%;
     border: 3px solid white;
-    margin-left: 17.1%;
+    margin-left: 16.3%;
     border-radius: 117px;
-    z-index: 999;
     margin-top: 3px;
-    top: 10.5rem;
+    top: 9.5rem;
     background: black;
     margin-bottom: 3px;
     text-align: center;
@@ -131,18 +129,15 @@ body {
 #yellow-box {
     clear: left;
   border-radius: 0 0px 0 132px;
-  margin-bottom: 33px;
   background: #ffffc7;
 }
 
 #blue-box {
  background: #5CACEE;
-    margin-left: 14px;
     border-radius: 0 132px 0 0px;
 }
 
 #green-box {
-      margin-left: 16px;
     border-radius: 0px 0 132px 0;
     background: #8CDD81;
 }
@@ -153,7 +148,7 @@ body {
     font-weight: bold;
     text-decoration: none;
     position: relative;
-    bottom: 7.3em;
+    bottom: 6.8em;
     padding: 1%;
 
 }
@@ -182,6 +177,10 @@ body {
 #lose-msg {
   color: red;
   margin-left: 40%;
-  font-size: 24px;
+  font-size: 30px;
+}
+
+.highlight-border {
+  border-color: white;
 }
 

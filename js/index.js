@@ -31,7 +31,6 @@ $(function(){
     $("#play-button").hide();
     startGame();
     newRound();
-    activateBoard();
  
   });
 
@@ -42,8 +41,18 @@ $(function(){
     $("#lose-msg").hide();
     $("input[type='radio']:checked").each(function() {
       mode = $(this).attr("id")
-      mode === 'easy' ? gameData.speed = 1200 : gameData.speed = 600;
+      mode === 'easy' ? gameData.speed = 1000 : gameData.speed = 300;
     });
+  }
+
+  function newRound() {
+    console.log("NEW ROUND");
+    $('span.round').text(++gameData.round);
+    gameData.sequence.push("b"); //options[Math.floor(Math.random() * options.length)]
+    gameData.copy = gameData.sequence.slice(0);
+    console.log(gameData.copy);
+    console.log(gameData.sequence);
+    animate(gameData.sequence);
   }
 
   function startGame() {
@@ -55,31 +64,19 @@ $(function(){
     gameData.score = 0;
     gameData.active = true; 
     console.log(gameData);
-    $('#lose-msg').hide(); 
+    $('#lose-msg').hide();
+    $('#mode').hide(); 
   }
 
   function endGame() {
-    $("#lose-msg").show().delay(1000);
+    $("#lose-msg").show().delay(2000);
     $("#play-button").show().delay(2000);
-  }
-
-  function randomColor() {
-    return options[Math.floor(Math.random() * options.length)];
-  }
-
-  function newRound() {
-    console.log("NEW ROUND");
-    $('span.round').text(++gameData.round);
-    $('span.best-score').text(++gameData.score);
-    gameData.sequence.push(options[Math.floor(Math.random() * options.length)]); 
-    gameData.copy = gameData.sequence.slice(0);
-    console.log(gameData.copy);
-    console.log(gameData.sequence);
-    animate(gameData.sequence);
+    $("#mode").show().delay(2000);
   }
  
   function animate(sequence) {
     console.log("ANIMATE");
+    disableBoard(); 
     var i = 0;
     var interval = setInterval(function() {
       console.log(gameData.sequence)
@@ -126,6 +123,7 @@ $(function(){
     console.log(expectedResponse);
     console.log(actualResponse);
     gameData.active = (expectedResponse === actualResponse);
+    if (gameData.active === true) {$('span.best-score').text(++gameData.score * 2);};
     console.log(gameData.active);
     verifyLoseStatus();
   }
@@ -134,7 +132,7 @@ $(function(){
     // copy array will be empty when user has successfully completed sequence
     if (gameData.copy.length === 0 && gameData.active) {
       disableBoard(); 
-      newRound(); 
+      newRound();
     } else if (!gameData.active) {//user lost 
       disableBoard(); 
       endGame();
