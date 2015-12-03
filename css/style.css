@@ -122,23 +122,23 @@ body {
 }
 
 #red-box {
-    border-radius: 132px 0 0;
+    border-radius: 255px 0 0;
     background: #CD5555;
 }
 
 #yellow-box {
     clear: left;
-  border-radius: 0 0px 0 132px;
+  border-radius: 0 0px 0 255px;
   background: #ffffc7;
 }
 
 #blue-box {
  background: #5CACEE;
-    border-radius: 0 132px 0 0px;
+    border-radius: 0 255px 0 0px;
 }
 
 #green-box {
-    border-radius: 0px 0 132px 0;
+    border-radius: 0px 0 255px 0;
     background: #8CDD81;
 }
 
@@ -190,6 +190,10 @@ body {
 
 .highlighted-yellow {
   background: yellow !important;
+}
+
+.hover {
+  border-color: gray;
 }
 
 

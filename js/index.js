@@ -34,6 +34,25 @@ $(function(){
  
   });
 
+  //click highlight listeners
+  $("div[id*='-box']").click(function(){
+    $(this).addClass("hover").delay(200).queue(function(){
+      $(this).removeClass("hover").dequeue();
+    });
+  });
+
+  //  $("#red-box").click(function(){
+  //   $(this).addClass("hover").delay(200).queue(function(){
+  //     $(this).removeClass("hover").dequeue();
+  //   });
+  // });
+
+  // $("#yellow-box").click(function(){
+  //   $(this).addClass("hover").delay(200).queue(function(){
+  //     $(this).removeClass("hover").dequeue();
+  //   });
+  // });
+
   //methods:
 
   //initial setup to get speed based on mode selected
@@ -48,7 +67,7 @@ $(function(){
   function newRound() {
     console.log("NEW ROUND");
     $('span.round').text(++gameData.round);
-    gameData.sequence.push(options[Math.floor(Math.random() * options.length)]); 
+    gameData.sequence.push(options[Math.floor(Math.random() * options.length)]);
     gameData.copy = gameData.sequence.slice(0);
     console.log(gameData.copy);
     console.log(gameData.sequence);
