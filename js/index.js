@@ -41,18 +41,6 @@ $(function(){
     });
   });
 
-  //  $("#red-box").click(function(){
-  //   $(this).addClass("hover").delay(200).queue(function(){
-  //     $(this).removeClass("hover").dequeue();
-  //   });
-  // });
-
-  // $("#yellow-box").click(function(){
-  //   $(this).addClass("hover").delay(200).queue(function(){
-  //     $(this).removeClass("hover").dequeue();
-  //   });
-  // });
-
   //methods:
 
   //initial setup to get speed based on mode selected
