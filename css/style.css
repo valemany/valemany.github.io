@@ -50,8 +50,9 @@ body {
 #fb {
   text-decoration: inherit;
   color: yellow;
-  font-family: monospace;
+  font-family: fantasy;
   margin-left: 1%;
+  font-size: 22; 
 }
 
 .round {
@@ -185,8 +186,10 @@ h2.round {
 
 #lose-msg {
   color: red;
-  margin-left: 40%;
+  margin-left: 30%;
   font-size: 22px;
+  font-family: fantasy;
+  font-weight: bold;
 }
 
 .highlighted-blue {

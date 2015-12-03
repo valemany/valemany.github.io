@@ -19,6 +19,23 @@ $(function(){
     score: score
   }
 
+  var audioElement = document.createElement('audio');
+  audioElement.setAttribute('src', 'audio.mp3');
+  // audioElement.setAttribute('autoplay', 'autoplay');
+
+  audioElement.addEventListener("load", function() {
+    audioElement.play();
+  }, true);
+
+  function stopMusic() {
+    audioElement.pause();
+  }
+
+  function playMusic() {
+    audioElement.play();
+  }
+
+
   //sets easy mode as default 
   $("#easy").click();
 
@@ -31,6 +48,7 @@ $(function(){
   //gameplay
 
   $('body').on('click', '#play-button', function(){
+    $("span.best-score").text(0);
     $("#play-button").hide();
     startGame();
     newRound();
@@ -77,6 +95,7 @@ $(function(){
     $('#lose-msg').hide();
     $("#fb").hide();
     $('#mode').hide(); 
+    playMusic();
   }
 
   function endGame() {
@@ -84,6 +103,7 @@ $(function(){
     $("#play-button").show().delay(2000);
     $("#mode").show().delay(2000);
     $("#fb").show().delay(2000);
+    stopMusic();
   }
  
   function animate(sequence) {
