@@ -47,12 +47,25 @@ body {
   display: inline;
 }
 
+#fb {
+  text-decoration: inherit;
+  color: yellow;
+  font-family: monospace;
+  margin-left: 1%;
+}
+
 .round {
-  margin-left: 45%;
+  margin-left: 18%;
   display: inline;
   font-size: 18px;
   color: white;
   font-weight: bolder;
+}
+
+h2.round {
+  position: absolute;
+  left: 37%;
+  top: 6.6%;
 }
 
 #container > h2 > span {
@@ -63,7 +76,7 @@ body {
   float: right;
   position: relative;
   right: 13%;
-  top: 5em;
+  top: 8.5em;
   width: 300px;
   background: url(../images/instruction_background.jpg) top no-repeat;
   background-size: cover;
@@ -95,8 +108,8 @@ body {
 
 #game-container {
   margin-left: 165px;
-    margin-top: 10px;
-    height: 350px;
+  margin-top: 3%;
+  height: 350px;
 
 }
 
@@ -195,5 +208,7 @@ body {
 .hover {
   border-color: gray;
 }
+
+
 
 

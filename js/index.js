@@ -25,6 +25,9 @@ $(function(){
   //hide you lose msg
   $("#lose-msg").hide();
 
+  //hide fb
+  $("#fb").hide();
+
   //gameplay
 
   $('body').on('click', '#play-button', function(){
@@ -72,6 +75,7 @@ $(function(){
     gameData.active = true; 
     console.log(gameData);
     $('#lose-msg').hide();
+    $("#fb").hide();
     $('#mode').hide(); 
   }
 
@@ -79,6 +83,7 @@ $(function(){
     $("#lose-msg").show().delay(2000);
     $("#play-button").show().delay(2000);
     $("#mode").show().delay(2000);
+    $("#fb").show().delay(2000);
   }
  
   function animate(sequence) {
@@ -128,7 +133,7 @@ $(function(){
     console.log(expectedResponse);
     console.log(actualResponse);
     gameData.active = (expectedResponse === actualResponse);
-    if (gameData.active === true) {$('span.best-score').text(++gameData.score * 2);};
+    if (gameData.active === true) {$('span.best-score').text(++gameData.score * 5);};
     console.log(gameData.active);
     verifyLoseStatus();
   }
