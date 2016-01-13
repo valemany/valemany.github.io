@@ -146,10 +146,10 @@ $(function(){
 
   }
 
-  function registerClick() {
+  function registerClick(e) {
     console.log("REGISTER CLICK")
     var expectedResponse = gameData.copy.shift();
-    var actualResponse = event.target.id.substring(0,1);
+    var actualResponse = e.target.id.substring(0,1);
     console.log(expectedResponse);
     console.log(actualResponse);
     gameData.active = (expectedResponse === actualResponse);
@@ -170,8 +170,8 @@ $(function(){
   }
 
    function activateBoard() {
-    $('#game-container').on('click', '[data-box]', function() {
-      registerClick();
+    $('#game-container').on('click', '[data-box]', function(e) {
+      registerClick(e);
     });
 
     $('[data-box]').addClass('hoverable');
